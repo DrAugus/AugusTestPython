@@ -25,13 +25,14 @@ def get_image(html):
         if image == "":
             continue
         # 将下载的图片保存到对应的文件夹中
-        with open('./spider_picture/%s.jpg' % num, 'wb') as fb:
+        with open('/spider/picture/%s.jpg' % num, 'wb') as fb:
             fb.write(image)
             print("正在下载第%s张图片" % num)
             num = num + 1
         print("only first one")
         break
     print("下载完成！")
+
 
 if __name__ == '__main__':
     # 定义爬取页面的链接
@@ -40,4 +41,3 @@ if __name__ == '__main__':
     html = load_page(url)
     # 在页面中，匹配图片链接，并将图片下载下来，保存到对应文件夹
     get_image(html)
-
