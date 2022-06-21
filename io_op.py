@@ -12,7 +12,9 @@ def one_by_one():
     line = f.readline()
     while line:
         s = line.__str__().replace('\n', '')
-        print('[' + s + '](./' + s + '.md)')
+        f2 = open('./data/' + s + '.md', 'a+', encoding='utf-8')
+        f2.write('# ' + s)
+        print('- [' + s + '](./' + s + '.md)')
         line = f.readline()
     f.close()
 
